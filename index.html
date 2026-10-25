@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXORA، مجله‌ای برای کشف داستان‌های علم، اختراعات و رازهای ناشناخته.">
+  <title>NEXORA | فراتر از دانسته‌ها</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">NEXORA<span>.</span></a>
+    <nav>
+      <a href="#home">خانه</a>
+      <a href="#stories">داستان‌های علمی</a>
+      <a href="#news">تازه‌های علم</a>
+      <a href="#about">درباره ما</a>
+    </nav>
+    <span class="edition">نسخهٔ فارسی</span>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">مجلهٔ علم و ناشناخته‌ها</p>
+        <h1>جهان، عجیب‌تر از<br>آن چیزی است که می‌دانیم.</h1>
+        <p class="hero-description">
+          از اختراعاتی که دنیا را تغییر دادند تا پرسش‌هایی که
+          دانشمندان هنوز برایشان پاسخ قطعی ندارند.
+          سفر علمی تو از اینجا شروع می‌شود.
+        </p>
+        <a class="hero-button" href="#stories">کشف داستان‌ها <span>←</span></a>
+      </div>
+      <div class="hero-art" aria-label="تصویر انتزاعی از جهان و فضا">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="planet"></div>
+        <span class="art-label">UNKNOWN / 001</span>
+        <span class="art-number">∞</span>
+      </div>
+    </section>
+
+    <section class="latest section" id="stories">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">آرشیو دانش</p>
+          <h2>چیزهایی برای کشف کردن</h2>
+        </div>
+        <span class="section-count">01 — 04</span>
+      </div>
+
+      <div class="filters" aria-label="دسته‌بندی مقالات">
+        <button class="filter active" data-category="all">همه</button>
+        <button class="filter" data-category="science">علم</button>
+        <button class="filter" data-category="history">تاریخ اختراعات</button>
+        <button class="filter" data-category="mystery">ناشناخته‌ها</button>
+      </div>
+
+      <label class="search-box">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="در میان داستان‌ها جست‌وجو کن..." aria-label="جست‌وجوی مقالات">
+      </label>
+
+      <div class="article-grid" id="articleGrid">
+        <article class="article-card" data-category="science">
+          <div class="card-art art-space"><span>01</span><b>SPACE / TIME</b></div>
+          <div class="card-content">
+            <p class="card-meta">علم · ۶ دقیقه مطالعه</p>
+            <h3>اگر به یک سیاه‌چاله نزدیک شویم چه اتفاقی می‌افتد؟</h3>
+            <p>سفری به یکی از عجیب‌ترین پدیده‌های کیهان؛ جایی که گرانش، درک ما از جهان را به چالش می‌کشد.</p>
+            <a href="articles/blackhole.html" class="read-link">ادامهٔ داستان <span>←</span></a>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="history">
+          <div class="card-art art-invention"><span>02</span><b>HUMAN / IDEAS</b></div>
+          <div class="card-content">
+            <p class="card-meta">تاریخ اختراعات · ۴ دقیقه مطالعه</p>
+            <h3>اختراعی که ارتباط انسان‌ها را برای همیشه تغییر داد</h3>
+            <p>از نخستین پیام‌ها تا دنیای متصل امروز؛ داستان مسیری که فاصله‌ها را کوچک‌تر کرد.</p>
+            <a href="articles/inventions.html" class="read-link">ادامهٔ داستان <span>←</span></a>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="mystery">
+          <div class="card-art art-ocean"><span>03</span><b>DEEP / OCEAN</b></div>
+          <div class="card-content">
+            <p class="card-meta">ناشناخته‌ها · ۵ دقیقه مطالعه</p>
+            <h3>اعماق اقیانوس؛ دنیایی که هنوز کامل نمی‌شناسیم</h3>
+            <p>زندگی در تاریکی مطلق چگونه ممکن است و چه چیزهایی هنوز در انتظار کشف شدن هستند؟</p>
+            <a href="articles/ocean.html" class="read-link">ادامهٔ داستان <span>←</span></a>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="science">
+          <div class="card-art art-brain"><span>04</span><b>BRAIN / MIND</b></div>
+          <div class="card-content">
+            <p class="card-meta">علوم اعصاب · ۷ دقیقه مطالعه</p>
+            <h3>مغز انسان چگونه خاطرات را ذخیره می‌کند؟</h3>
+            <p>نگاهی به فرایند پیچیده‌ای که تجربه‌های روزمره را به بخشی از حافظهٔ ما تبدیل می‌کند.</p>
+            <a href="articles/brain.html" class="read-link">ادامهٔ داستان <span>←</span></a>
+          </div>
+        </article>
+      </div>
+      <p id="emptyMessage" class="empty-message" hidden>مقاله‌ای با این مشخصات پیدا نشد.</p>
+    </section>
+
+    <section class="news section" id="news">
+      <div>
+        <p class="eyebrow">در جریان علم</p>
+        <h2>دانستن، نقطهٔ پایان ندارد.</h2>
+        <p>این بخش برای تازه‌ترین خبرهای علمی آماده شده است. خبرها پس از بررسی منابع معتبر به اینجا اضافه می‌شوند.</p>
+      </div>
+      <span class="news-symbol">N° 001</span>
+    </section>
+
+    <section class="about section" id="about">
+      <p class="eyebrow">دربارهٔ NEXORA</p>
+      <h2>کنجکاوی، آغاز هر کشف است.</h2>
+      <p>NEXORA فضایی برای روایت علم به زبانی ساده، جذاب و دقیق است؛ جایی برای پرسیدن، بررسی کردن و فراتر رفتن از دانسته‌های امروز.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#">NEXORA<span>.</span></a>
+    <p>جهان را با پرسش‌های بهتر بشناس.</p>
+    <p class="credit">ساخته شده توسط ilya</p>
+    <small>© NEXORA — نسخهٔ آغازین</small>
+  <p class="credit">با تشکر از Mr. Molaverdi</p>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
