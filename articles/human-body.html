@@ -3,300 +3,290 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>اطلس سه‌بعدی بدن انسان | NEXORA</title>
+<meta name="description" content="راهنمای علمی بدن انسان؛ آشنایی با مغز، قلب، استخوان‌ها، عضلات و دستگاه‌های بدن در مجله علمی NEXORA">
+<title>دانشنامه بدن انسان | NEXORA</title>
 <style>
-:root{--bg:#090d0b;--panel:#111915;--green:#a6e65b;--text:#e8eee8;--muted:#9ba99e}
+:root{--bg:#090d0b;--panel:#111915;--green:#a6e65b;--text:#e8eee8;--muted:#a3afa5;--line:#29382d}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif}
-header{padding:22px 18px;border-bottom:1px solid #28382b;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.logo{font-size:25px;font-weight:bold;letter-spacing:2px;color:var(--green)}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:2}
+header{padding:20px;display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid var(--line)}
 a{color:var(--green);text-decoration:none}
-main{max-width:1100px;margin:auto;padding:22px 16px}
-h1{font-size:clamp(23px,4vw,34px);margin:12px 0;color:#f2f6ef}
-.intro{color:var(--muted);line-height:2;font-size:14px}
-.layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,1fr);gap:16px;margin-top:22px}
-.viewer,.info,.layers{background:var(--panel);border:1px solid #26372a;border-radius:16px;overflow:hidden}
-.viewer{position:relative;min-height:470px}
-#scene{width:100%;height:470px;display:block;touch-action:none}
-.hint{position:absolute;top:12px;right:12px;background:#080d0bd9;color:#c9d9c9;padding:9px 12px;border-radius:8px;font-size:12px;pointer-events:none}
-.controls{display:flex;gap:8px;flex-wrap:wrap;padding:12px;border-top:1px solid #26372a}
-button{font:inherit;cursor:pointer;border:1px solid #3a503d;border-radius:9px;padding:10px 12px;background:#17221a;color:var(--text)}
-button.active{background:#b1e968;color:#10180b;border-color:var(--green);font-weight:bold}
-button:hover{border-color:var(--green)}
-.side{display:flex;flex-direction:column;gap:14px}
-.info,.layers{padding:18px}
-.kicker{font-size:11px;color:var(--green);letter-spacing:1px}
-h2{font-size:19px;margin:10px 0}
-#description{color:#c4d0c5;line-height:2;font-size:14px}
-.fact{border-top:1px solid #28382b;padding-top:12px;margin-top:12px;color:var(--muted);font-size:12px;line-height:1.9}
-.layerlist{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.layerlist button{font-size:13px}
-footer{text-align:center;color:#768378;font-size:12px;padding:28px 12px}
-@media(max-width:720px){.layout{grid-template-columns:1fr}.viewer{min-height:380px}#scene{height:380px}.side{display:grid;grid-template-columns:1fr}.logo{font-size:21px}}
+.logo{font-size:25px;font-weight:bold;letter-spacing:2px}
+main{max-width:1050px;margin:auto;padding:24px 16px}
+.kicker{font-size:11px;letter-spacing:1px;color:var(--green)}
+h1{font-size:clamp(26px,5vw,38px);line-height:1.6;margin:8px 0}
+h2{font-size:22px;margin-top:0}
+h3{font-size:17px;color:var(--green);margin-bottom:5px}
+p,li{font-size:14px;color:#d0d9d1}
+.intro{font-size:15px;color:var(--muted)}
+.hero,.card,.contents,.notice{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:18px}
+.hero img{display:block;width:100%;max-height:650px;object-fit:contain;background:#f5f5f0;border-radius:12px}
+.caption{font-size:11px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.contents a{display:block;padding:7px 0;border-bottom:1px solid #253329;font-size:14px}
+section[id]{scroll-margin-top:15px}
+ul{padding-right:22px}
+li{padding:3px 0}
+.fact{border-right:3px solid var(--green);padding:8px 12px;background:#172119;border-radius:5px;color:#dce8dc;font-size:13px;margin-top:12px}
+footer{text-align:center;color:#849087;font-size:12px;padding:30px 12px;border-top:1px solid var(--line);margin-top:25px}
+@media(max-width:650px){.grid{grid-template-columns:1fr}header{padding:15px;font-size:12px}.logo{font-size:21px}.hero,.card,.contents{padding:15px}p,li{font-size:13px}}
 </style>
 </head>
 <body>
 <header>
-  <a class="logo" href="../index.html">NEXORA</a>
-  <a href="../index.html">بازگشت به صفحهٔ اصلی ←</a>
+<a class="logo" href="../index.html">NEXORA</a>
+<a href="../index.html">بازگشت به صفحهٔ اصلی ←</a>
 </header>
+
 <main>
-  <div class="kicker">SCIENCE / HUMAN ANATOMY</div>
-  <h1>اطلس سه‌بعدی بدن انسان</h1>
-  <p class="intro">با لایه‌های مختلف بدن آشنا شو. مدل را بچرخان، لایه‌ها را تغییر بده و روی بخش‌های رنگی کلیک کن تا توضیحات علمی آن‌ها را ببینی.</p>
+<div class="kicker">SCIENCE / HUMAN BIOLOGY</div>
+<h1>دانشنامهٔ بدن انسان</h1>
+<p class="intro">بدن انسان سامانه‌ای زنده و پیچیده است. میلیاردها سلول، بافت‌ها، اندام‌ها و دستگاه‌های مختلف با همکاری یکدیگر امکان حرکت، اندیشیدن، تنفس، هضم غذا و حفظ حیات را فراهم می‌کنند. در این راهنما با مهم‌ترین بخش‌های بدن و وظایف آن‌ها آشنا می‌شویم.</p>
 
-  <div class="layout">
-    <section class="viewer">
-      <div class="hint">برای چرخاندن، مدل را لمس و حرکت بده</div>
-      <canvas id="scene"></canvas>
-      <div class="controls">
-        <button id="reset">نمای اولیه</button>
-        <button id="auto" class="active">چرخش خودکار</button>
-      </div>
-    </section>
+<section class="hero">
+<h2>نمای آناتومی بدن انسان</h2>
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Anatomography_-_full_model.jpg" alt="تصویر آناتومیک سه‌بعدی بدن انسان" loading="eager">
+<p class="caption">تصویر آناتومیک از Wikimedia Commons؛ اثر Anatomography / DBCLS. منبع و مجوز: <a href="https://commons.wikimedia.org/wiki/File:Anatomography_-_full_model.jpg" target="_blank" rel="noopener">مشاهدهٔ مشخصات تصویر</a>. اگر تصویر بارگذاری نشد، ممکن است دسترسی به منبع تصویری محدود باشد.</p>
+</section>
 
-    <div class="side">
-      <section class="info">
-        <div class="kicker">ANATOMY GUIDE</div>
-        <h2 id="partTitle">بدن انسان</h2>
-        <div id="description">یک بخش از مدل را انتخاب کن تا توضیحات آن نمایش داده شود. این مدل، نمای آموزشی ساده‌شده است و جایگزین تصویر دقیق پزشکی نیست.</div>
-        <div class="fact" id="fact">راهنما: لایه‌ها را از قسمت پایین روشن یا خاموش کن.</div>
-      </section>
-      <section class="layers">
-        <div class="kicker">BODY LAYERS</div>
-        <h2>لایه‌های بدن</h2>
-        <p class="intro">برای دیدن ساختارهای مختلف، هر لایه را جداگانه انتخاب کن.</p>
-        <div class="layerlist">
-          <button class="active" data-layer="skin">پوست</button>
-          <button class="active" data-layer="muscles">عضلات</button>
-          <button class="active" data-layer="skeleton">اسکلت</button>
-          <button class="active" data-layer="organs">اندام‌ها</button>
-        </div>
-      </section>
-    </div>
-  </div>
+<nav class="contents">
+<div class="kicker">CONTENTS</div>
+<h2>فهرست مطالب</h2>
+<a href="#overview">۱. سازمان بدن و سلول‌ها</a>
+<a href="#skeleton">۲. استخوان‌ها و مفاصل</a>
+<a href="#muscles">۳. دستگاه عضلانی</a>
+<a href="#brain">۴. مغز و دستگاه عصبی</a>
+<a href="#heart">۵. قلب و گردش خون</a>
+<a href="#breathing">۶. دستگاه تنفس</a>
+<a href="#digestion">۷. دستگاه گوارش</a>
+<a href="#urinary">۸. کلیه‌ها و دستگاه ادراری</a>
+<a href="#skin">۹. پوست و حواس</a>
+<a href="#hormones">۱۰. هورمون‌ها و غدد</a>
+<a href="#immunity">۱۱. دستگاه ایمنی و لنفاوی</a>
+<a href="#reproduction">۱۲. دستگاه تولیدمثل</a>
+<a href="#balance">۱۳. حفظ تعادل داخلی بدن</a>
+<a href="#facts">۱۴. دانستنی‌های علمی</a>
+</nav>
+
+<section class="card" id="overview">
+<div class="kicker">01 / THE BASICS</div>
+<h2>۱. بدن از چه ساخته شده است؟</h2>
+<p>کوچک‌ترین واحد زندهٔ سازندهٔ بدن، سلول است. سلول‌ها ساختار و وظایف متفاوتی دارند؛ برای مثال، سلول عصبی پیام منتقل می‌کند و گلبول قرمز اکسیژن جابه‌جا می‌کند.</p>
+<div class="grid">
+<div><h3>سلول</h3><p>غشای سلولی مرز سلول را مشخص می‌کند. سیتوپلاسم محیط بسیاری از واکنش‌هاست و در بیشتر سلول‌ها هسته اطلاعات ژنتیکی را نگهداری می‌کند.</p></div>
+<div><h3>بافت</h3><p>گروهی از سلول‌ها و مواد پیرامون آن‌ها که کار مشترکی انجام می‌دهند. بافت پوششی، پیوندی، عضلانی و عصبی چهار گروه اصلی بافت‌ها هستند.</p></div>
+<div><h3>اندام</h3><p>ساختاری مانند قلب یا معده که چند نوع بافت را برای انجام وظیفه‌ای مشخص کنار هم دارد.</p></div>
+<div><h3>دستگاه</h3><p>مجموعه‌ای از اندام‌های هماهنگ؛ مانند دستگاه گوارش که غذا را پردازش و مواد قابل جذب را وارد بدن می‌کند.</p></div>
+</div>
+<div class="fact">ژن‌ها بخشی از دستورالعمل‌های ساخت و عملکرد بدن را در DNA ذخیره می‌کنند؛ محیط و سبک زندگی نیز بر بسیاری از ویژگی‌های بدن اثر می‌گذارند.</div>
+</section>
+
+<section class="card" id="skeleton">
+<div class="kicker">02 / SKELETAL SYSTEM</div>
+<h2>۲. استخوان‌ها و مفاصل</h2>
+<p>اسکلت به بدن شکل می‌دهد، از اندام‌های حساس محافظت می‌کند و همراه عضلات امکان حرکت را فراهم می‌سازد. استخوان بافتی زنده است که پیوسته بازسازی می‌شود.</p>
+<ul>
+<li><b>جمجمه:</b> از مغز محافظت می‌کند.</li>
+<li><b>ستون مهره‌ها:</b> بدن را پشتیبانی می‌کند و از نخاع محافظت می‌کند.</li>
+<li><b>قفسهٔ سینه:</b> از قلب و ریه‌ها محافظت می‌کند.</li>
+<li><b>لگن:</b> وزن تنه را منتقل می‌کند و از اندام‌های ناحیهٔ لگنی محافظت می‌کند.</li>
+<li><b>مفاصل:</b> محل اتصال استخوان‌ها هستند؛ دامنهٔ حرکت آن‌ها بسته به نوع مفصل متفاوت است.</li>
+<li><b>مغز استخوان:</b> در تولید سلول‌های خونی نقش دارد.</li>
+</ul>
+<p>استخوان‌ها مواد معدنی، به‌ویژه کلسیم و فسفر، را ذخیره می‌کنند. فعالیت بدنی مناسب و دریافت مواد مغذی کافی به سلامت استخوان‌ها کمک می‌کند.</p>
+<div class="fact">اسکلت فقط چارچوبی سخت نیست؛ بافت زنده‌ای است که به تغییرات و نیازهای بدن پاسخ می‌دهد.</div>
+</section>
+
+<section class="card" id="muscles">
+<div class="kicker">03 / MUSCULAR SYSTEM</div>
+<h2>۳. دستگاه عضلانی</h2>
+<p>عضلات با انقباض نیرو تولید می‌کنند. حرکت، حفظ وضعیت بدن، جابه‌جایی مواد در اندام‌ها و تولید بخشی از گرمای بدن به فعالیت عضلات وابسته است.</p>
+<ul>
+<li><b>عضلات اسکلتی:</b> معمولاً به استخوان‌ها متصل‌اند و حرکت‌های ارادی مانند راه‌رفتن را انجام می‌دهند.</li>
+<li><b>عضلات صاف:</b> در دیوارهٔ اندام‌هایی مانند روده و رگ‌ها وجود دارند و عمدتاً غیرارادی کار می‌کنند.</li>
+<li><b>عضلهٔ قلبی:</b> با انقباض‌های هماهنگ، خون را به گردش درمی‌آورد.</li>
+</ul>
+<p>تاندون‌ها عضلات را به استخوان‌ها متصل می‌کنند. دستگاه عصبی، فعالیت عضلات را هماهنگ می‌کند و انرژی موردنیاز انقباض از واکنش‌های شیمیایی سلول تأمین می‌شود.</p>
+</section>
+
+<section class="card" id="brain">
+<div class="kicker">04 / NERVOUS SYSTEM</div>
+<h2>۴. مغز و دستگاه عصبی</h2>
+<p>دستگاه عصبی اطلاعات را دریافت و پردازش می‌کند و به هماهنگی حرکت، ادراک، یادگیری، حافظه و بسیاری از عملکردهای حیاتی کمک می‌کند. دو بخش اصلی آن دستگاه عصبی مرکزی و محیطی هستند.</p>
+<ul>
+<li><b>مخ:</b> در پردازش حواس، زبان، حافظه، برنامه‌ریزی و بسیاری از فعالیت‌های شناختی نقش دارد.</li>
+<li><b>مخچه:</b> به هماهنگی حرکت و تعادل کمک می‌کند.</li>
+<li><b>ساقهٔ مغز:</b> در تنظیم عملکردهای حیاتی مانند تنفس و سطح هوشیاری نقش دارد.</li>
+<li><b>نخاع:</b> پیام‌ها را میان مغز و بخش‌های مختلف بدن منتقل می‌کند و در برخی واکنش‌های سریع نقش دارد.</li>
+<li><b>اعصاب محیطی:</b> اطلاعات حسی را به دستگاه عصبی مرکزی می‌رسانند و فرمان‌ها را به عضلات و اندام‌ها منتقل می‌کنند.</li>
+</ul>
+<p>نورون‌ها سلول‌هایی تخصص‌یافته برای انتقال اطلاعات‌اند. ارتباط میان بسیاری از نورون‌ها در محل‌هایی به نام سیناپس انجام می‌شود. خواب کافی برای یادگیری، حافظه و عملکرد طبیعی مغز اهمیت دارد.</p>
+<div class="fact">مغز تنها بافت بدن نیست که پیام‌های الکتریکی دارد؛ فعالیت الکتریکی سلول‌های قلب نیز برای هماهنگی ضربان اهمیت دارد.</div>
+</section>
+
+<section class="card" id="heart">
+<div class="kicker">05 / CIRCULATORY SYSTEM</div>
+<h2>۵. قلب و گردش خون</h2>
+<p>دستگاه گردش خون اکسیژن، مواد غذایی، هورمون‌ها و مواد دیگر را جابه‌جا می‌کند و به انتقال بخشی از مواد زائد برای دفع کمک می‌کند.</p>
+<ul>
+<li><b>قلب:</b> چهار حفره دارد؛ دو دهلیز و دو بطن. دریچه‌ها به هدایت یک‌طرفهٔ خون کمک می‌کنند.</li>
+<li><b>سرخرگ‌ها:</b> خون را از قلب دور می‌کنند.</li>
+<li><b>سیاهرگ‌ها:</b> خون را به قلب بازمی‌گردانند.</li>
+<li><b>مویرگ‌ها:</b> محل اصلی تبادل مواد میان خون و بافت‌ها هستند.</li>
+<li><b>گلبول قرمز:</b> با کمک هموگلوبین بیشتر اکسیژن خون را حمل می‌کند.</li>
+<li><b>گلبول سفید:</b> در دفاع ایمنی بدن نقش دارد.</li>
+<li><b>پلاکت‌ها:</b> در انعقاد خون مشارکت می‌کنند.</li>
+<li><b>پلاسما:</b> بخش مایع خون است و مواد مختلف را حمل می‌کند.</li>
+</ul>
+<p>در گردش ریوی، خون میان قلب و ریه‌ها حرکت می‌کند تا تبادل گازها انجام شود. در گردش سیستمیک، خون میان قلب و بیشتر بافت‌های بدن جابه‌جا می‌شود.</p>
+</section>
+
+<section class="card" id="breathing">
+<div class="kicker">06 / RESPIRATORY SYSTEM</div>
+<h2>۶. دستگاه تنفس</h2>
+<p>وظیفهٔ اصلی دستگاه تنفس تأمین اکسیژن و دفع دی‌اکسید کربن است. هوا از بینی یا دهان وارد راه‌های هوایی می‌شود و به ریه‌ها می‌رسد.</p>
+<ul>
+<li><b>بینی:</b> هوا را تا حدی گرم، مرطوب و تصفیه می‌کند.</li>
+<li><b>نای و نایژه‌ها:</b> هوا را به سوی ریه‌ها هدایت می‌کنند.</li>
+<li><b>نایژک‌ها:</b> شاخه‌های کوچک‌تر راه‌های هوایی درون ریه‌اند.</li>
+<li><b>کیسه‌های هوایی:</b> در آلوئول‌ها اکسیژن و دی‌اکسید کربن میان هوا و خون مبادله می‌شوند.</li>
+<li><b>دیافراگم:</b> عضله‌ای مهم در تنفس است که با تغییر حجم قفسهٔ سینه به ورود و خروج هوا کمک می‌کند.</li>
+</ul>
+<p>اکسیژن پس از ورود به خون به بافت‌ها می‌رسد. سلول‌ها از آن در فرایندهای تولید انرژی استفاده می‌کنند و دی‌اکسید کربن حاصل از سوخت‌وساز را به خون پس می‌دهند.</p>
+</section>
+
+<section class="card" id="digestion">
+<div class="kicker">07 / DIGESTIVE SYSTEM</div>
+<h2>۷. دستگاه گوارش</h2>
+<p>دستگاه گوارش غذا را به مولکول‌هایی تبدیل می‌کند که بدن بتواند جذب و استفاده کند. حرکت ماهیچه‌های دیوارهٔ گوارش، آنزیم‌ها و ترشحات گوارشی در این فرایند نقش دارند.</p>
+<ul>
+<li><b>دهان:</b> غذا را خرد می‌کند و بزاق هضم برخی مواد را آغاز می‌کند.</li>
+<li><b>مری:</b> غذا را با حرکات موجی به معده می‌رساند.</li>
+<li><b>معده:</b> غذا را مخلوط می‌کند؛ اسید و آنزیم‌های آن در هضم، به‌ویژه پروتئین‌ها، نقش دارند.</li>
+<li><b>رودهٔ باریک:</b> بخش عمدهٔ هضم و جذب مواد مغذی در آن انجام می‌شود.</li>
+<li><b>رودهٔ بزرگ:</b> آب و الکترولیت‌ها را جذب می‌کند و به شکل‌گیری مدفوع کمک می‌کند.</li>
+<li><b>کبد:</b> مواد مغذی را پردازش می‌کند، بسیاری از مواد را می‌سازد و در تجزیهٔ برخی مواد نقش دارد.</li>
+<li><b>کیسهٔ صفرا:</b> صفرا را ذخیره و آزاد می‌کند؛ صفرا به هضم و جذب چربی‌ها کمک می‌کند.</li>
+<li><b>لوزالمعده:</b> آنزیم‌های گوارشی و هورمون‌هایی مانند انسولین تولید می‌کند.</li>
+</ul>
+<p>فیبر غذایی، آب کافی و تنوع در خوراکی‌ها می‌توانند به عملکرد طبیعی دستگاه گوارش کمک کنند. نیازهای غذایی افراد با سن، وضعیت سلامت و میزان فعالیت تفاوت دارند.</p>
+</section>
+
+<section class="card" id="urinary">
+<div class="kicker">08 / URINARY SYSTEM</div>
+<h2>۸. کلیه‌ها و دستگاه ادراری</h2>
+<p>کلیه‌ها خون را پالایش می‌کنند و به تنظیم آب، املاح و تعادل اسید و باز بدن کمک می‌کنند. آن‌ها همچنین در تنظیم فشار خون و تولید هورمون‌هایی مؤثر بر خون‌سازی و سلامت استخوان نقش دارند.</p>
+<ul>
+<li><b>کلیه‌ها:</b> مواد زائد و آب اضافی را برای ساخت ادرار جدا می‌کنند.</li>
+<li><b>نفرون:</b> واحد عملکردی کلیه است که پالایش و بازجذب مواد در آن انجام می‌شود.</li>
+<li><b>حالب‌ها:</b> ادرار را از کلیه‌ها به مثانه منتقل می‌کنند.</li>
+<li><b>مثانه:</b> ادرار را تا زمان دفع نگه می‌دارد.</li>
+<li><b>مجرای ادرار:</b> ادرار را از بدن خارج می‌کند.</li>
+</ul>
+<div class="fact">رنگ ادرار و میزان آن تحت تأثیر آب دریافتی، غذاها، داروها و وضعیت سلامت قرار می‌گیرد؛ یک نشانه به‌تنهایی برای تشخیص بیماری کافی نیست.</div>
+</section>
+
+<section class="card" id="skin">
+<div class="kicker">09 / SKIN & SENSES</div>
+<h2>۹. پوست و اندام‌های حسی</h2>
+<p>پوست بزرگ‌ترین اندام بدن است. از بدن در برابر بسیاری از عوامل محیطی محافظت می‌کند، در تنظیم دما مشارکت دارد و گیرنده‌هایی برای لمس، فشار، درد و دما در آن وجود دارند.</p>
+<ul>
+<li><b>روپوست:</b> لایهٔ بیرونی محافظ پوست است.</li>
+<li><b>درم:</b> لایه‌ای حاوی رگ‌ها، اعصاب، غدد و ساختارهای نگهدارنده است.</li>
+<li><b>بافت زیرپوستی:</b> در عایق‌سازی، ذخیرهٔ انرژی و اتصال پوست به بافت‌های زیرین نقش دارد.</li>
+<li><b>چشم:</b> نور را دریافت می‌کند و اطلاعات بینایی را به مغز می‌فرستد.</li>
+<li><b>گوش:</b> در شنوایی و با کمک ساختارهای گوش داخلی در تعادل نقش دارد.</li>
+<li><b>بینی:</b> گیرنده‌های بویایی دارد.</li>
+<li><b>زبان:</b> دارای گیرنده‌های چشایی است؛ بو نیز در تجربهٔ مزهٔ غذا نقش مهمی دارد.</li>
+</ul>
+<p>حواس فقط در اندام‌ها شکل نمی‌گیرند؛ مغز اطلاعات دریافتی از گیرنده‌ها را تفسیر می‌کند تا تجربهٔ آگاهانه ایجاد شود.</p>
+</section>
+
+<section class="card" id="hormones">
+<div class="kicker">10 / ENDOCRINE SYSTEM</div>
+<h2>۱۰. هورمون‌ها و غدد درون‌ریز</h2>
+<p>هورمون‌ها پیام‌رسان‌های شیمیایی‌اند که از غدد یا بافت‌های خاص آزاد می‌شوند. آن‌ها از راه خون یا در محیط نزدیک سلول‌ها بر فعالیت بخش‌های دیگر بدن اثر می‌گذارند.</p>
+<ul>
+<li><b>غدهٔ تیروئید:</b> هورمون‌هایی تولید می‌کند که بر سوخت‌وساز و رشد اثر دارند.</li>
+<li><b>لوزالمعده:</b> انسولین و گلوکاگون را برای کمک به تنظیم قند خون ترشح می‌کند.</li>
+<li><b>غدد فوق‌کلیوی:</b> هورمون‌هایی مرتبط با پاسخ به فشار، تعادل نمک و عملکردهای دیگر تولید می‌کنند.</li>
+<li><b>هیپوفیز و هیپوتالاموس:</b> در هماهنگی بسیاری از فعالیت‌های هورمونی نقش دارند.</li>
+<li><b>غدد پاراتیروئید:</b> در تنظیم کلسیم خون مشارکت می‌کنند.</li>
+</ul>
+<p>دستگاه غدد درون‌ریز با دستگاه عصبی همکاری می‌کند. تغییرات هورمونی می‌توانند بر رشد، خواب، اشتها، خلق‌وخو و تولیدمثل اثر بگذارند.</p>
+</section>
+
+<section class="card" id="immunity">
+<div class="kicker">11 / IMMUNE SYSTEM</div>
+<h2>۱۱. دستگاه ایمنی و لنفاوی</h2>
+<p>دستگاه ایمنی از بدن در برابر عوامل بیماری‌زا محافظت می‌کند و در شناسایی و پاک‌سازی برخی سلول‌های آسیب‌دیده نقش دارد. دفاع بدن از چند لایه تشکیل شده است.</p>
+<ul>
+<li><b>سدهای محافظ:</b> پوست و غشاهای مخاطی مانع ورود بسیاری از عوامل خارجی می‌شوند.</li>
+<li><b>ایمنی ذاتی:</b> پاسخ اولیه و گسترده‌ای است که شامل سلول‌ها و مواد دفاعی گوناگون می‌شود.</li>
+<li><b>ایمنی تطبیقی:</b> با مشارکت لنفوسیت‌های B و T پاسخ‌های اختصاصی ایجاد می‌کند.</li>
+<li><b>آنتی‌بادی‌ها:</b> پروتئین‌هایی هستند که به شناسایی هدف‌های مشخص کمک می‌کنند.</li>
+<li><b>گره‌های لنفاوی:</b> در پالایش مایع لنف و فعالیت سلول‌های ایمنی نقش دارند.</li>
+<li><b>طحال:</b> به پالایش خون و فعالیت‌های ایمنی کمک می‌کند.</li>
+</ul>
+<p>واکسیناسیون می‌تواند دستگاه ایمنی را برای پاسخ مؤثرتر به برخی عوامل بیماری‌زا آماده کند. تب یا التهاب همیشه به معنای یک بیماری مشخص نیست و باید در کنار سایر نشانه‌ها ارزیابی شود.</p>
+</section>
+
+<section class="card" id="reproduction">
+<div class="kicker">12 / REPRODUCTIVE SYSTEM</div>
+<h2>۱۲. دستگاه تولیدمثل</h2>
+<p>دستگاه تولیدمثل در تولید سلول‌های جنسی و هورمون‌های مرتبط نقش دارد. ساختارهای آن با رشد و سن تغییر می‌کنند و فعالیتشان تحت تأثیر دستگاه عصبی و هورمون‌هاست.</p>
+<ul>
+<li><b>تخمدان‌ها:</b> تخمک و هورمون‌هایی مانند استروژن و پروژسترون تولید می‌کنند.</li>
+<li><b>رحم:</b> اندامی عضلانی است که در صورت بارداری محل رشد جنین می‌شود.</li>
+<li><b>بیضه‌ها:</b> اسپرم و هورمون تستوسترون تولید می‌کنند.</li>
+<li><b>مجاری تولیدمثلی:</b> در انتقال سلول‌های جنسی نقش دارند.</li>
+</ul>
+<p>رشد و بلوغ با تغییرات هورمونی همراه است و زمان و الگوی این تغییرات در افراد متفاوت است. این بخش یک معرفی زیست‌شناختی است و جایگزین مشاورهٔ پزشکی فردی نیست.</p>
+</section>
+
+<section class="card" id="balance">
+<div class="kicker">13 / HOMEOSTASIS</div>
+<h2>۱۳. بدن چگونه تعادل داخلی را حفظ می‌کند؟</h2>
+<p>هم‌ایستایی یا هومئوستازی به تنظیم شرایط داخلی بدن در محدوده‌هایی مناسب برای عملکرد سلول‌ها گفته می‌شود. بدن دائماً تغییرات محیط داخلی را تشخیص می‌دهد و پاسخ‌های تنظیمی ایجاد می‌کند.</p>
+<ul>
+<li><b>دمای بدن:</b> تعریق و تغییر جریان خون پوست به دفع یا حفظ گرما کمک می‌کنند.</li>
+<li><b>قند خون:</b> هورمون‌هایی مانند انسولین و گلوکاگون در تنظیم آن نقش دارند.</li>
+<li><b>آب و املاح:</b> کلیه‌ها و هورمون‌ها به تنظیم مقدار آب و غلظت مواد محلول کمک می‌کنند.</li>
+<li><b>اکسیژن و دی‌اکسید کربن:</b> دستگاه تنفس و گردش خون در حفظ تعادل گازها همکاری می‌کنند.</li>
+<li><b>پاسخ به خطر:</b> دستگاه عصبی و هورمونی می‌توانند بدن را برای واکنش سریع آماده کنند.</li>
+</ul>
+<p>بسیاری از این فرایندها با بازخورد منفی تنظیم می‌شوند؛ یعنی هنگامی که یک متغیر از محدودهٔ مناسب دور می‌شود، پاسخ بدن معمولاً به کاهش آن تغییر کمک می‌کند.</p>
+</section>
+
+<section class="card" id="facts">
+<div class="kicker">14 / SCIENCE FACTS</div>
+<h2>۱۴. دانستنی‌های علمی بدن انسان</h2>
+<ul>
+<li>قلب در طول زندگی هزاران میلیون بار منقبض می‌شود؛ تعداد دقیق به طول عمر و ضربان قلب بستگی دارد.</li>
+<li>تعداد استخوان‌های فرد بالغ معمولاً حدود ۲۰۶ عدد است، اما تفاوت‌های طبیعی میان افراد وجود دارد.</li>
+<li>بدن انسان انواع بسیار متنوعی از سلول‌ها دارد که هرکدام ساختار و عملکرد تخصصی خود را دارند.</li>
+<li>بیشتر اکسیژن خون به هموگلوبین گلبول‌های قرمز متصل است؛ مقدار کمی نیز در پلاسما حل می‌شود.</li>
+<li>کبد و کلیه‌ها هر دو در پردازش و دفع مواد نقش دارند، اما وظایفشان یکسان نیست.</li>
+<li>مغز هنگام خواب همچنان فعال است؛ خواب در حافظه، یادگیری و تنظیم عملکردهای بدن نقش دارد.</li>
+<li>میکروبیوم بدن شامل اجتماعاتی از میکروب‌هاست که در بخش‌هایی مانند روده زندگی می‌کنند؛ اثر آن‌ها به نوع میکروب و شرایط بدن بستگی دارد.</li>
+<li>نبض، تنفس و دمای بدن تحت تأثیر سن، فعالیت، محیط و وضعیت سلامت تغییر می‌کنند؛ یک عدد ثابت برای همه مناسب نیست.</li>
+</ul>
+</section>
+
+<section class="notice">
+<h2>یادآوری علمی</h2>
+<p>این صفحه برای آموزش عمومی زیست‌شناسی تهیه شده است. بدن انسان تنوع طبیعی زیادی دارد و توضیحات ساده‌شده نمی‌توانند همهٔ تفاوت‌های فردی یا جزئیات پزشکی را پوشش دهند. برای تشخیص یا درمان مشکلات سلامت باید از متخصص واجد صلاحیت کمک گرفت.</p>
+</section>
+
+<section class="card">
+<div class="kicker">IMAGE CREDITS</div>
+<h2>منابع تصویر</h2>
+<p>تصویر آناتومی از <a href="https://commons.wikimedia.org/wiki/File:Anatomography_-_full_model.jpg" target="_blank" rel="noopener">Anatomography / DBCLS در Wikimedia Commons</a> گرفته شده است. پیش از استفادهٔ مجدد از تصویر، شرایط مجوز و انتساب درج‌شده در صفحهٔ منبع را بررسی کنید.</p>
+<p>مطالب این صفحه، توضیحات آموزشی عمومی‌اند و برای جایگزینی منابع تخصصی پزشکی طراحی نشده‌اند.</p>
+</section>
 </main>
+
 <footer>NEXORA · مجلهٔ علمی</footer>
-
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
-  }
-}
-</script>
-
-<script type="module">
-import * as THREE from 'three';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/controls/OrbitControls.js';
-
-const canvas = document.querySelector('#scene');
-const scene = new THREE.Scene();
-scene.background = new THREE.Color('#0b120d');
-
-const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
-camera.position.set(5, 3.5, 9);
-
-const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:false});
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.shadowMap.enabled = true;
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.target.set(0, 2.8, 0);
-controls.minDistance = 5;
-controls.maxDistance = 14;
-
-scene.add(new THREE.HemisphereLight(0xdfffe2, 0x283126, 2));
-const light = new THREE.DirectionalLight(0xffffff, 3);
-light.position.set(4, 8, 6);
-scene.add(light);
-const rim = new THREE.PointLight(0x9ee85b, 18, 15);
-rim.position.set(-4, 4, -3);
-scene.add(rim);
-
-const floor = new THREE.GridHelper(12, 24, 0x38523a, 0x1c2b20);
-floor.position.y = 0;
-scene.add(floor);
-
-const groups = {};
-['skin','muscles','skeleton','organs'].forEach(name=>{
-  groups[name] = new THREE.Group();
-  groups[name].userData.layer = name;
-  scene.add(groups[name]);
-});
-
-const descriptions = {
-  body:['بدن انسان','بدن از سلول‌ها، بافت‌ها، اندام‌ها و دستگاه‌های هماهنگ تشکیل شده است. این مدل برای آشنایی مقدماتی با جایگاه برخی ساختارهای بدن طراحی شده است.','مدل نمایش‌داده‌شده شماتیک است و جزئیات پزشکی کامل ندارد.'],
-  head:['سر و جمجمه','جمجمه از مغز محافظت می‌کند. مغز اطلاعات حسی را پردازش می‌کند و بسیاری از فعالیت‌های بدن را هماهنگ می‌سازد.','مغز درون حفرهٔ جمجمه قرار دارد.'],
-  torso:['تنه','تنه شامل بخش‌هایی از دستگاه تنفسی، گردش خون، گوارش و دیگر دستگاه‌های بدن است.','قفسهٔ سینه از قلب و ریه‌ها محافظت می‌کند.'],
-  skin:['پوست','پوست سد محافظ بدن است و به تنظیم دما، دریافت برخی محرک‌ها و جلوگیری از دست‌رفتن بیش از حد آب کمک می‌کند.','پوست بزرگ‌ترین اندام بدن انسان است.'],
-  muscles:['عضلات','عضلات با انقباض و انبساط به حرکت، حفظ وضعیت بدن و تولید گرما کمک می‌کنند.','عضلات اسکلتی معمولاً با استخوان‌ها همکاری می‌کنند.'],
-  skeleton:['اسکلت','اسکلت به بدن شکل می‌دهد، از اندام‌های حساس محافظت می‌کند و همراه عضلات امکان حرکت را فراهم می‌سازد.','استخوان‌ها همچنین در ذخیرهٔ مواد معدنی نقش دارند.'],
-  brain:['مغز','مغز بخشی از دستگاه عصبی مرکزی است و در یادگیری، حافظه، حرکت، احساس و بسیاری از عملکردهای حیاتی نقش دارد.','مغز به‌وسیلهٔ جمجمه محافظت می‌شود.'],
-  heart:['قلب','قلب یک اندام عضلانی است که خون را در دستگاه گردش خون به حرکت درمی‌آورد.','قلب در قفسهٔ سینه، میان دو ریه قرار دارد.'],
-  lungs:['ریه‌ها','ریه‌ها در تبادل گازها نقش دارند؛ اکسیژن وارد خون می‌شود و دی‌اکسید کربن از بدن دفع می‌شود.','ریه‌ها در قفسهٔ سینه قرار دارند.'],
-  liver:['کبد','کبد در پردازش مواد مغذی، تولید صفرا و تجزیهٔ برخی مواد نقش مهمی دارد.','کبد در بخش بالایی سمت راست شکم قرار دارد.'],
-  stomach:['معده','معده غذا را موقتاً نگه می‌دارد و با کمک اسید و آنزیم‌ها در هضم آن نقش دارد.','معده بخشی از دستگاه گوارش است.'],
-  pelvis:['لگن','لگن وزن تنه را منتقل می‌کند و از برخی اندام‌های ناحیهٔ لگنی محافظت می‌کند.','لگن به ستون مهره‌ها و اندام‌های تحتانی متصل است.']
-};
-
-function material(color, roughness=0.65){
-  return new THREE.MeshStandardMaterial({color, roughness, metalness:0.05});
-}
-const mats = {
-  skin:material('#c59b75'),
-  muscle:material('#a53f43'),
-  bone:material('#e5d9b7'),
-  brain:material('#e8a3b3'),
-  heart:material('#d93445'),
-  lung:material('#d87982'),
-  liver:material('#8b4935'),
-  stomach:material('#d8a05c'),
-  joint:material('#d4c7a7')
-};
-
-function ellipsoid(group, name, x,y,z, sx,sy,sz, mat, info, rot=0){
-  const mesh = new THREE.Mesh(new THREE.SphereGeometry(1,20,16), mat);
-  mesh.position.set(x,y,z);
-  mesh.scale.set(sx,sy,sz);
-  mesh.rotation.z=rot;
-  mesh.userData.info=info;
-  mesh.userData.label=name;
-  mesh.castShadow=true;
-  group.add(mesh);
-  return mesh;
-}
-function bone(group,name,a,b,r,mat,info){
-  const start=new THREE.Vector3(...a), end=new THREE.Vector3(...b);
-  const direction=end.clone().sub(start);
-  const mesh=new THREE.Mesh(new THREE.CylinderGeometry(r,r,direction.length(),10),mat);
-  mesh.position.copy(start).add(end).multiplyScalar(.5);
-  mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),direction.normalize());
-  mesh.userData.info=info; mesh.userData.label=name;
-  group.add(mesh);
-  ellipsoid(group,name,...a,r*1.12,r*1.12,r*1.12,mat,info);
-  ellipsoid(group,name,...b,r*1.12,r*1.12,r*1.12,mat,info);
-  return mesh;
-}
-const skinInfo='skin', muscleInfo='muscles', boneInfo='skeleton';
-const s=groups.skin, m=groups.muscles, b=groups.skeleton, o=groups.organs;
-
-// نمای ساده‌شدهٔ پوست
-ellipsoid(s,'سر',0,5.45,0,.48,.59,.43,mats.skin,skinInfo);
-ellipsoid(s,'گردن',0,4.75,0,.21,.32,.22,mats.skin,skinInfo);
-ellipsoid(s,'تنه',0,3.75,0,.78,1.05,.39,mats.skin,skinInfo);
-ellipsoid(s,'لگن',0,2.7,0,.65,.43,.37,mats.skin,skinInfo);
-for(const side of [-1,1]){
-  ellipsoid(s,'بازو',side*.91,3.75,0,.25,.76,.25,mats.skin,skinInfo,side*-.12);
-  ellipsoid(s,'ساعد',side*1.08,2.95,0,.19,.65,.2,mats.skin,skinInfo,side*-.05);
-  ellipsoid(s,'دست',side*1.12,2.35,0,.17,.25,.14,mats.skin,skinInfo);
-  ellipsoid(s,'ران',side*.34,1.95,0,.28,.7,.3,mats.skin,skinInfo,side*-.03);
-  ellipsoid(s,'ساق',side*.36,.93,0,.2,.62,.22,mats.skin,skinInfo);
-  ellipsoid(s,'پا',side*.36,.28,.12,.24,.15,.42,mats.skin,skinInfo);
-}
-
-// عضلات شماتیک
-ellipsoid(m,'عضلات سینه',0,4.05,.36,.58,.36,.13,mats.muscle,muscleInfo);
-ellipsoid(m,'عضلات شکم',0,3.35,.34,.42,.48,.12,mats.muscle,muscleInfo);
-for(const side of [-1,1]){
-  ellipsoid(m,'عضلات شانه',side*.78,4.15,0,.31,.3,.28,mats.muscle,muscleInfo);
-  ellipsoid(m,'عضلات بازو',side*.92,3.65,0,.19,.52,.2,mats.muscle,muscleInfo);
-  ellipsoid(m,'عضلات ران',side*.34,1.95,.05,.22,.57,.23,mats.muscle,muscleInfo);
-  ellipsoid(m,'عضلات ساق',side*.36,.9,.02,.15,.48,.17,mats.muscle,muscleInfo);
-}
-
-// اسکلت ساده‌شده
-ellipsoid(b,'جمجمه',0,5.45,0,.34,.42,.32,mats.bone,boneInfo);
-bone(b,'ستون مهره‌ها',[0,4.75,0],[0,2.75,0],.075,mats.joint,boneInfo);
-bone(b,'ترقوه چپ',[0,4.48,0],[-.55,4.4,0],.07,mats.bone,boneInfo);
-bone(b,'ترقوه راست',[0,4.48,0],[.55,4.4,0],.07,mats.bone,boneInfo);
-for(let i=0;i<5;i++){
-  ellipsoid(b,'دنده',0,4.18-i*.18,.04,.56-i*.035,.07,.28,mats.bone,boneInfo);
-}
-ellipsoid(b,'لگن استخوانی',0,2.65,0,.57,.22,.3,mats.bone,boneInfo);
-for(const side of [-1,1]){
-  bone(b,'استخوان بازو',[side*.62,4.25,0],[side*.91,3.35,0],.09,mats.bone,boneInfo);
-  bone(b,'استخوان ساعد',[side*.91,3.3,0],[side*1.02,2.55,0],.055,mats.bone,boneInfo);
-  bone(b,'استخوان ران',[side*.32,2.55,0],[side*.35,1.45,0],.12,mats.bone,boneInfo);
-  bone(b,'استخوان ساق',[side*.35,1.4,0],[side*.36,.45,0],.075,mats.bone,boneInfo);
-}
-
-// اندام‌های داخلی شماتیک
-ellipsoid(o,'مغز',0,5.48,.03,.29,.3,.28,mats.brain,'brain');
-ellipsoid(o,'ریه چپ',-.25,4.02,.12,.23,.48,.18,mats.lung,'lungs');
-ellipsoid(o,'ریه راست',.25,4.02,.12,.23,.48,.18,mats.lung,'lungs');
-ellipsoid(o,'قلب',0,3.88,.34,.17,.25,.15,mats.heart,'heart',-.2);
-ellipsoid(o,'کبد',.25,3.18,.18,.34,.2,.16,mats.liver,'liver',-.15);
-ellipsoid(o,'معده',-.22,3.16,.19,.22,.25,.14,mats.stomach,'stomach',.25);
-ellipsoid(o,'روده‌ها',0,2.85,.18,.35,.18,.13,mats.stomach,'torso');
-
-const raycaster=new THREE.Raycaster();
-const pointer=new THREE.Vector2();
-const title=document.querySelector('#partTitle');
-const desc=document.querySelector('#description');
-const fact=document.querySelector('#fact');
-
-function showInfo(key){
-  const data=descriptions[key]||descriptions.body;
-  title.textContent=data[0];
-  desc.textContent=data[1];
-  fact.textContent=data[2];
-}
-canvas.addEventListener('pointerup',event=>{
-  const rect=canvas.getBoundingClientRect();
-  pointer.x=((event.clientX-rect.left)/rect.width)*2-1;
-  pointer.y=-((event.clientY-rect.top)/rect.height)*2+1;
-  raycaster.setFromCamera(pointer,camera);
-  const hits=raycaster.intersectObjects(Object.values(groups),true);
-  if(!hits.length)return;
-  const obj=hits.find(hit=>hit.object.userData.info)?.object;
-  if(!obj)return;
-  showInfo(obj.userData.info);
-});
-
-document.querySelectorAll('[data-layer]').forEach(button=>{
-  button.addEventListener('click',()=>{
-    const group=groups[button.dataset.layer];
-    group.visible=!group.visible;
-    button.classList.toggle('active',group.visible);
-  });
-});
-document.querySelector('#reset').addEventListener('click',()=>{
-  camera.position.set(5,3.5,9);
-  controls.target.set(0,2.8,0);
-  controls.update();
-  showInfo('body');
-});
-let spinning=true;
-document.querySelector('#auto').addEventListener('click',event=>{
-  spinning=!spinning;
-  event.currentTarget.classList.toggle('active',spinning);
-  event.currentTarget.textContent=spinning?'چرخش خودکار':'چرخش خودکار خاموش';
-});
-
-function resize(){
-  const w=canvas.clientWidth,h=canvas.clientHeight;
-  renderer.setSize(w,h,false);
-  camera.aspect=w/h;
-  camera.updateProjectionMatrix();
-}
-new ResizeObserver(resize).observe(canvas);
-resize();
-
-function animate(){
-  requestAnimationFrame(animate);
-  if(spinning) groups.skin.rotation.y+=.003;
-  if(spinning){
-    groups.muscles.rotation.y=groups.skin.rotation.y;
-    groups.skeleton.rotation.y=groups.skin.rotation.y;
-    groups.organs.rotation.y=groups.skin.rotation.y;
-  }
-  controls.update();
-  renderer.render(scene,camera);
-}
-animate();
-</script>
 </body>
 </html>
