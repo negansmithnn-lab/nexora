@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10140f">
+<title>NEXORA | جدول تناوبی</title>
+<style>
+:root {
+  --bg: #10140f;
+  --panel: #191f17;
+  --green: #8cff3d;
+  --yellow: #e5df38;
+  --text: #f1f3e9;
+  --muted: #a0a69a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Tahoma, Arial, sans-serif;
+}
+header {
+  padding: 24px 6%;
+  border-bottom: 1px solid #343b2c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  color: var(--green);
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+.back { color: var(--yellow); text-decoration: none; }
+main { max-width: 1250px; margin: auto; padding: 35px 18px 60px; }
+.eyebrow {
+  color: var(--green);
+  letter-spacing: 3px;
+  font-size: 12px;
+  direction: ltr;
+  text-align: right;
+}
+h1 { font-size: clamp(27px, 5vw, 48px); margin: 14px 0; }
+h1 span { color: var(--green); }
+.intro { color: var(--muted); line-height: 2; max-width: 720px; }
+.warning {
+  margin: 25px 0;
+  padding: 15px;
+  border-right: 3px solid var(--yellow);
+  background: #1c2117;
+  color: #e7e9d9;
+  line-height: 1.9;
+}
+.legend {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin: 24px 0;
+}
+.legend span {
+  border: 1px solid #41483b;
+  padding: 8px 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.legend i {
+  display: inline-block; width: 9px; height: 9px;
+  margin-left: 6px; background: var(--green);
+}
+.legend .yellow { background: var(--yellow); }
+.table-wrap {
+  overflow-x: auto;
+  padding: 12px 0 22px;
+  direction: ltr;
+}
+.periodic {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(47px, 1fr));
+  gap: 5px;
+  min-width: 940px;
+}
+.element {
+  min-height: 68px;
+  position: relative;
+  padding: 5px 3px;
+  border: 1px solid #394333;
+  background: #1b2619;
+  color: var(--text);
+  cursor: pointer;
+  transition: .18s ease;
+  text-align: center;
+  font-family: inherit;
+}
+.element:hover, .element:focus-visible {
+  border-color: var(--green);
+  background: #263c20;
+  transform: translateY(-2px);
+  outline: none;
+}
+.element .num {
+  display: block; text-align: left;
+  font-size: 9px; color: #aab69f;
+}
+.element .symbol {
+  display: block; font-size: 22px;
+  font-weight: bold; margin: 3px 0;
+}
+.element .ename {
+  display: block; font-size: 9px; color: #b8c2b0;
+}
+.element.special-br {
+  background: #284c1b;
+  border: 2px solid var(--green);
+  box-shadow: 0 0 12px #8cff3d38;
+}
+.element.special-ba {
+  background: #46451a;
+  border: 2px solid var(--yellow);
+  box-shadow: 0 0 12px #e5df3838;
+}
+.element.special-br .symbol { color: var(--green); }
+.element.special-ba .symbol { color: var(--yellow); }
+.series-title {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: right;
+  padding: 15px 3px 5px;
+}
+.detail {
+  margin-top: 20px;
+  padding: 24px;
+  border: 1px solid #41483b;
+  background: var(--panel);
+  min-height: 150px;
+}
+.detail .big {
+  color: var(--green);
+  font-size: 40px;
+  font-weight: bold;
+  direction: ltr;
+  display: inline-block;
+}
+.detail h2 { margin: 10px 0; }
+.detail p { color: var(--muted); line-height: 2; }
+.note { color: var(--muted); font-size: 12px; line-height: 2; }
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #747d6c;
+  border-top: 1px solid #30372a;
+  font-size: 12px;
+}
+@media(max-width:600px) {
+  main { padding: 25px 12px 40px; }
+  header { padding: 18px; }
+  .element { min-height: 62px; }
+}
+
+.nexora-bb-signature {
+  margin-top: 55px;
+  padding: 42px 12px;
+  text-align: center;
+  background: #080b07;
+  border-top: 1px solid #52613b;
+}
+.nexora-bb-title {
+  direction: ltr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  color: #eeeede;
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 8vw, 65px);
+  font-weight: 900;
+}
+.nexora-bb-tile {
+  width: 1.12em;
+  height: 1.12em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 2px solid #8cff3d;
+  color: #8cff3d;
+  line-height: 1;
+}
+.nexora-bb-tile.ba {
+  border-color: #e5df38;
+  color: #e5df38;
+}
+.nexora-bb-tile small {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  font: 9px Arial, sans-serif;
+}
+.nexora-bb-word { padding: 0 2px; }
+.nexora-bb-subtitle {
+  margin-top: 18px;
+  color: #9ca88d;
+  font: 11px Arial, sans-serif;
+  letter-spacing: 4px;
+  direction: ltr;
+}
+.nexora-amc {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 5px 13px;
+  background: #e4e4d9;
+  color: #11140f;
+  font: 900 21px Arial, sans-serif;
+  letter-spacing: 1px;
+}
+.nexora-bb-caption {
+  margin: 18px auto 0;
+  max-width: 440px;
+  color: #858d7d;
+  font-size: 12px;
+  line-height: 2;
+}
+
+
+/* Fix atomic numbers in the Breaking Bad signature */
+.nexora-bb-tile {
+  width: 1.15em;
+  height: 1.15em;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 8px;
+  overflow: hidden;
+}
+.nexora-bb-tile small {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  right: auto;
+  font: bold 10px Arial, sans-serif;
+  line-height: 1;
+}
+.nexora-bb-tile b {
+  display: block;
+  font-size: .76em;
+  line-height: 1;
+  font-weight: 900;
+}
+
+
+.element-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.element-facts p {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line, #40513b);
+  border-radius: 8px;
+  background: rgba(241, 243, 233, 0.04);
+  overflow-wrap: anywhere;
+}
+
+.element-facts strong {
+  color: #d7df72;
+}
+
+@media (max-width: 600px) {
+  .element-facts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ELEMENT FACTS STYLE */
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="../index.html">NEXORA<span>.</span></a>
+  <a class="back" href="../index.html">بازگشت به مجله ←</a>
+</header>
+
+<main>
+  <div class="eyebrow">CHEMISTRY / ELEMENTS</div>
+  <h1>دنیای عناصر؛ <span>از علم تا افسانه</span></h1>
+  <p class="intro">
+    ۱۱۸ عنصر، از هیدروژن تا اوگانسون. روی هر خانه بزن تا اطلاعات آن را ببینی.
+    این نسخه از جدول تناوبی با الهام از پالت سبز و زرد و فضای آزمایشگاهی
+    طراحی شده است.
+  </p>
+
+  <div class="warning">
+    شیمی واقعی از داستان‌های تلویزیونی جذاب‌تر و البته حساس‌تر است.
+    اینجا قرار است عناصر را بشناسیم، نه اینکه آزمایشگاه خیالی را به خانه بیاوریم.
+  </div>
+
+  <div class="legend">
+    <span><i></i> عناصر معمولی</span>
+    <span><i class="yellow"></i> خانه ویژه Ba</span>
+    <span><i></i> خانه ویژه Br</span>
+  </div>
+
+  <div class="table-wrap">
+    <div class="periodic" id="periodic"></div>
+  </div>
+
+  <section class="detail" id="detail" aria-live="polite">
+    <div class="big">118</div>
+    <h2>یک عنصر را انتخاب کن</h2>
+    <p>عدد اتمی، نماد و نام عنصر اینجا نمایش داده می‌شود.</p>
+  </section>
+
+  <p class="note">
+    نکته علمی: Br نماد برم و Ba نماد باریم است. این دو نماد به‌خودی‌خود
+    به معنای یک ترکیب شیمیایی نیستند. جدول برای آموزش و آشنایی با عناصر است.
+  </p>
+</main>
+
+
+<section class="nexora-bb-signature">
+  <div class="nexora-bb-title">
+    <span class="nexora-bb-tile"><small>35</small><b>Br</b></span>
+    <span class="nexora-bb-word">eaking</span>
+    <span class="nexora-bb-tile ba"><small>56</small><b>Ba</b></span>
+    <span class="nexora-bb-word">d</span>
+  </div>
+  <p class="nexora-bb-subtitle">CHEMISTRY IS EVERYWHERE</p>
+  <div class="nexora-amc">AMC</div>
+  <p class="nexora-bb-caption">
+    ادای احترام به دنیای شیمی و فضای بصری Breaking Bad
+    <br>NEXORA · PERIODIC TABLE
+  </p>
+</section>
+
+<footer>NEXORA · علم، بدون حاشیه‌های اضافی</footer>
+
+<script src="elements-data.js"></script>
+<script>
+const periods = [
+  ["H","He"],
+  ["Li","Be","B","C","N","O","F","Ne"],
+  ["Na","Mg","Al","Si","P","S","Cl","Ar"],
+  ["K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br","Kr"],
+  ["Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe"],
+  ["Cs","Ba","La","Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn"],
+  ["Fr","Ra","Ac","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"]
+];
+
+const lanth = ["Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu"];
+const actin = ["Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr"];
+
+const names = {
+H:"هیدروژن",He:"هلیم",Li:"لیتیم",Be:"بریلیم",B:"بور",C:"کربن",
+N:"نیتروژن",O:"اکسیژن",F:"فلوئور",Ne:"نئون",Na:"سدیم",Mg:"منیزیم",
+Al:"آلومینیوم",Si:"سیلیسیم",P:"فسفر",S:"گوگرد",Cl:"کلر",Ar:"آرگون",
+K:"پتاسیم",Ca:"کلسیم",Sc:"اسکاندیم",Ti:"تیتانیم",V:"وانادیم",
+Cr:"کروم",Mn:"منگنز",Fe:"آهن",Co:"کبالت",Ni:"نیکل",Cu:"مس",
+Zn:"روی",Ga:"گالیم",Ge:"ژرمانیم",As:"آرسنیک",Se:"سلنیم",
+Br:"برم",Kr:"کریپتون",Rb:"روبیدیم",Sr:"استرانسیم",Y:"ایتریم",
+Zr:"زیرکونیم",Nb:"نیوبیم",Mo:"مولیبدن",Tc:"تکنسیم",Ru:"روتنیم",
+Rh:"رودیم",Pd:"پالادیم",Ag:"نقره",Cd:"کادمیم",In:"ایندیم",
+Sn:"قلع",Sb:"آنتیموان",Te:"تلوریم",I:"ید",Xe:"زنون",
+Cs:"سزیم",Ba:"باریم",La:"لانتان",Ce:"سریم",Pr:"پرازئودیمیم",
+Nd:"نئودیمیم",Pm:"پرومتیم",Sm:"ساماریم",Eu:"یوروپیم",
+Gd:"گادولینیم",Tb:"تربیم",Dy:"دیسپروزیم",Ho:"هولمیم",
+Er:"اربیم",Tm:"تولیم",Yb:"ایتربیم",Lu:"لوتتیم",
+Hf:"هافنیم",Ta:"تانتال",W:"تنگستن",Re:"رنیم",Os:"اسمیم",
+Ir:"ایریدیم",Pt:"پلاتین",Au:"طلا",Hg:"جیوه",Tl:"تالیم",
+Pb:"سرب",Bi:"بیسموت",Po:"پولونیم",At:"استاتین",Rn:"رادون",
+Fr:"فرانسیم",Ra:"رادیم",Ac:"اکتینیم",Th:"توریم",Pa:"پروتاکتینیم",
+U:"اورانیوم",Np:"نپتونیم",Pu:"پلوتونیم",Am:"آمریسیم",
+Cm:"کوریم",Bk:"برکلیم",Cf:"کالیفرنیم",Es:"اینشتینیم",
+Fm:"فرمیم",Md:"مندلیفیم",No:"نوبلیم",Lr:"لورنسیم",
+Rf:"رادرفوردیم",Db:"دوبنیم",Sg:"سیبورگیم",Bh:"بوهریم",
+Hs:"هاسیم",Mt:"مایتنریم",Ds:"دارمشتاتیم",Rg:"رونتگنیم",
+Cn:"کوپرنیسیم",Nh:"نیهونیم",Fl:"فلروویم",Mc:"موسکوویم",
+Lv:"لیورموریم",Ts:"تنسین",Og:"اوگانسون"
+};
+
+const symbols = [
+"H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar",
+"K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br","Kr",
+"Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe",
+"Cs","Ba","La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu",
+"Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn",
+"Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr",
+"Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"
+];
+
+const atomic = Object.fromEntries(symbols.map((s,i) => [s,i+1]));
+const grid = document.getElementById("periodic");
+
+function addElement(symbol, row, col) {
+  const z = atomic[symbol];
+  if (!z) return;
+
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "element";
+  button.style.gridRow = row;
+  button.style.gridColumn = col;
+
+  if (symbol === "Br") button.classList.add("special-br");
+  if (symbol === "Ba") button.classList.add("special-ba");
+
+  const num = document.createElement("span");
+  num.className = "num";
+  num.textContent = z;
+
+  const sym = document.createElement("span");
+  sym.className = "symbol";
+  sym.textContent = symbol;
+
+  const name = document.createElement("span");
+  name.className = "ename";
+  name.textContent = names[symbol] || "عنصر";
+
+  button.append(num, sym, name);
+  button.setAttribute("aria-label", (names[symbol] || symbol) + "، " + symbol);
+
+  button.addEventListener("click", () => {
+    grid.querySelectorAll(".element").forEach(el => el.style.outline = "");
+    button.style.outline = "2px solid #f1f3e9";
+
+    const detail = document.getElementById("detail");
+    detail.replaceChildren();
+
+    const big = document.createElement("div");
+    big.className = "big";
+    big.textContent = symbol;
+
+    const heading = document.createElement("h2");
+    heading.textContent = names[symbol] || "عنصر شیمیایی";
+
+    const data = window.ELEMENTS_DATA?.[symbol] || {};
+
+    const info = document.createElement("p");
+    info.textContent = "عدد اتمی: " + z +
+      " · نماد شیمیایی: " + symbol +
+      " · تعداد پروتون‌ها: " + z;
+
+    detail.append(big, heading, info);
+
+    const fields = [
+      ["نام انگلیسی", data.en],
+      ["جرم اتمی استاندارد", data.mass],
+      ["گروه", data.group],
+      ["دوره", data.period],
+      ["دسته شیمیایی", data.type],
+      ["حالت فیزیکی", data.state],
+      ["آرایش الکترونی", data.config],
+      ["ظاهر", data.appearance],
+      ["چگالی", data.density],
+      ["نقطه ذوب", data.melt],
+      ["نقطه جوش", data.boil],
+      ["کاشف", data.discovered],
+      ["درباره عنصر", data.summary],
+      ["منبع", data.source],
+      ["کاربردها", data.uses],
+      ["نکات ایمنی", data.safety]
+    ];
+
+    const list = document.createElement("div");
+    list.className = "element-facts";
+
+    fields.forEach(([label, value]) => {
+      if (value === undefined || value === null || value === "") return;
+
+      const row = document.createElement("p");
+      const strong = document.createElement("strong");
+      strong.textContent = label + ": ";
+      row.append(strong, document.createTextNode(String(value)));
+      list.appendChild(row);
+    });
+
+    if (list.childElementCount) detail.appendChild(list);
+  });
+
+  grid.appendChild(button);
+}
+
+/* دوره اول: هیدروژن گروه ۱ و هلیم گروه ۱۸ */
+addElement("H", 1, 1);
+addElement("He", 1, 18);
+
+/* دوره‌های دوم و سوم: دو گروه سمت چپ و شش گروه سمت راست */
+periods[1].forEach((s,i) => addElement(s, 2, i < 2 ? i+1 : i+11));
+periods[2].forEach((s,i) => addElement(s, 3, i < 2 ? i+1 : i+11));
+
+/* دوره‌های چهارم تا هفتم */
+periods.slice(3).forEach((period,index) => {
+  const row = index + 4;
+  period.forEach((symbol,i) => addElement(symbol,row,i+1));
+});
+
+/* دو ردیف جدا برای عناصر بلوک f */
+const title1 = document.createElement("div");
+title1.className = "series-title";
+title1.textContent = "لانتانیدها";
+title1.style.gridRow = 8;
+grid.appendChild(title1);
+lanth.forEach((s,i) => addElement(s,9,i+3));
+
+const title2 = document.createElement("div");
+title2.className = "series-title";
+title2.textContent = "اکتینیدها";
+title2.style.gridRow = 10;
+grid.appendChild(title2);
+actin.forEach((s,i) => addElement(s,11,i+3));
+</script>
+</body>
+</html>
